@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button soma;
+    Button soma, subtracao, multiplicacao, divisao;
     EditText numero1, numero2, resultado;
 
 
@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         soma = findViewById(R.id.soma);
+        subtracao = findViewById(R.id.subtracao);
+        divisao = findViewById(R.id.divisao);
+        multiplicacao = findViewById(R.id.multiplicacao);
         numero1 = findViewById(R.id.numero1);
         numero2 = findViewById(R.id.numero2);
         resultado = findViewById(R.id.resultado);
@@ -38,6 +41,30 @@ public class MainActivity extends AppCompatActivity {
         Float res = n1 + n2;
         resultado.setText(String.valueOf(res));
 
+    }
+
+    public void subtrair(View view){
+        Float n1 = Float.parseFloat(numero1.getText().toString());
+        Float n2 = Float.parseFloat(numero2.getText().toString());
+        Float res = n1 - n2;
+        resultado.setText(String.valueOf(res));
 
     }
+
+    public void multiplicar(View view){
+        Float n1 = Float.parseFloat(numero1.getText().toString());
+        Float n2 = Float.parseFloat(numero2.getText().toString());
+        Float res = n1 * n2;
+        resultado.setText(String.valueOf(res));
+
+    }
+
+    public void dividir(View view){
+        Float n1 = Float.parseFloat(numero1.getText().toString());
+        Float n2 = Float.parseFloat(numero2.getText().toString());
+        Float res = n1 / n2;
+        resultado.setText(String.valueOf(res));
+
+    }
+
 }
